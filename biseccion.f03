@@ -19,11 +19,11 @@ Program Biseccion
   Read *, a
   Write (*,*) "Valor de b"
   Read *, b
- 
+  
   fa=f(a)
   fb=f(b)
-!  k= log((b-a)/0.0001)/log(2.00)
-!  Write (*,*) fa, " | ", fb       !!!Debug!!!
+  !  k= log((b-a)/0.0001)/log(2.00)
+  !  Write (*,*) fa, " | ", fb       !!!Debug!!!
   If (fa*fb < 0) Then 
      
      k= log((b-a)/0.0001)/log(2.00)
@@ -35,24 +35,24 @@ Program Biseccion
         
         If(fa*fr<0)Then 
            b=r
-!           fb=fr
+           !fb=fr
            k=k-1
         Else 
            a=r
-!           fa=fr
+           !fa=fr
            k= k-1
         End IF
   
      End Do
      
      write (*,*) "Valor de r  es ", r, " con un error aproximado de 0.0001"
-  
+     
   Else  
-  	Write (*,*) "No se puede realizar por fallar en alguna condición." ! ya que o es la raiz o no se encuentra el intervalo dado o es una raiz compleja."
+     Write (*,*) "No se puede realizar por fallar en alguna condición." ! ya que o es la raiz o no se encuentra el intervalo dado o es una raiz compleja."
   End If
-
- ! Er= (b-a)/(2**n)
- ! write (*,*) "Valor de r  es ", r, " con un error aproximado de 0.0001"
- ! write (*,*) "Valor es r ", Er
-
+  
+  ! Er= (b-a)/(2**n)
+  ! write (*,*) "Valor de r  es ", r, " con un error aproximado de 0.0001"
+  ! write (*,*) "Valor es r ", Er
+  
 End Program Biseccion
