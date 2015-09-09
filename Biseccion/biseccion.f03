@@ -1,4 +1,4 @@
-Real Function f (x)
+﻿Real Function f (x)
   Implicit none
   Real :: x
   f= alog(x*x)-0.7
@@ -19,14 +19,17 @@ Program Biseccion
   Read *, a
   Write (*,*) "Valor de b"
   Read *, b
-  
+  Write (*,*) "Valor del Error Estimado"  
+  Read *, Er
+
+
   fa=f(a)
   fb=f(b)
   !  k= log((b-a)/0.0001)/log(2.00)
   !  Write (*,*) fa, " | ", fb       !!!Debug!!!
   If (fa*fb < 0) Then 
      
-     k= log((b-a)/0.0001)/log(2.00)
+     k= log((b-a)/Er)/log(2.00)
      Write (*,*) "Se realizaran alrededor de  ", int(k)+1 , "iteraciones"
      
      Do while (k>0)
@@ -45,14 +48,14 @@ Program Biseccion
   
      End Do
      
-     write (*,*) "Valor de r  es ", r, " con un error aproximado de 0.0001"
+     write (*,*) "Valor de r  es ", r, " con un error aproximado de ", Er
      
   Else  
      Write (*,*) "No se puede realizar por fallar en alguna condición." ! ya que o es la raiz o no se encuentra el intervalo dado o es una raiz compleja."
   End If
   
   ! Er= (b-a)/(2**n)
-  ! write (*,*) "Valor de r  es ", r, " con un error aproximado de 0.0001"
+  ! write (*,*) "Valor de r  es ", r, " con un error aproximado de ", Er
   ! write (*,*) "Valor es r ", Er
   
 End Program Biseccion
