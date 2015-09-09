@@ -1,7 +1,7 @@
 Real Function f (x)
   Implicit none
   Real :: x
-  f= x**10 -1
+  f= alog(x*x)-0.7
   !Funcion a evaluar
 End Function f
 
