@@ -1,17 +1,17 @@
-﻿Real Function f (x)
+﻿Real  Function f (x)
   Implicit none
-  Real :: x
-  f= alog(x*x)-0.7
+  Real*8 :: x
+  f=dlog(x*x)-0.7
   !Funcion a evaluar
 End Function f
 
 Program Biseccion
   Implicit none
   Real :: f           !Funcion
-  Real :: a, b, r, x     !intervalo y Posible valor de la raiz x=2
-  Real :: fa, fb, fr  !Evalucion de los intervalos
-  Real :: Er, k !Numero de iteraciones
-  Integer :: n, i        !iteraciones
+  Real*8 :: a, b, r   !,x     !intervalo y Posible valor de la raiz x=2
+  Real*8 :: fa, fb, fr  !Evalucion de los intervalos
+  Real*8 :: Er, k !Numero de iteraciones
+ ! Integer :: n, i        !iteraciones
   
   
   Write (*,*) "Inserte un intervalo [a,b] donde b>a."
@@ -30,7 +30,7 @@ Program Biseccion
   If (fa*fb < 0) Then 
      
      k= log((b-a)/Er)/log(2.00)
-     Write (*,*) "Se realizaran alrededor de  ", int(k)+1 , "iteraciones"
+     Write (*,*) "Se realizaran alrededor de ", int(k)+1 , " iteraciones"
      
      Do while (k>0)
         r=(a+b)/2
@@ -45,10 +45,10 @@ Program Biseccion
            !fa=fr
            k= k-1
         End IF
-  
+        Write (*,*) "|" ,int(k+1)+1, " | ", r," | ", fr, " |"
      End Do
      
-     write (*,*) "Valor de r  es ", r, " con un error aproximado de ", Er
+     write (*,*) "Valor de r  es ", r, " con un error aproximado de ",Er
      
   Else  
      Write (*,*) "No se puede realizar por fallar en alguna condición." ! ya que o es la raiz o no se encuentra el intervalo dado o es una raiz compleja."
