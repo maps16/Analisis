@@ -1,0 +1,18 @@
+Function f(x)
+!Funcion a Evaluar 
+Implicit None
+Real :: x
+f= Cos(x)- x
+End Function f
+
+
+Program FPosicion
+  
+  Implicit None 
+  
+  do while
+!1     ALGO
+  end do
+  
+  
+End Program FPosicion 
